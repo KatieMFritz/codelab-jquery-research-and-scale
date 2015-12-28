@@ -5,11 +5,16 @@ $('#js-calculator').each(function() {
   var $mileage = $container.find( 'input#js-mileage-rate' )
 
   function showResult() {
-    var $total = $mileage.val() * $miles.val() / $riders.val()
+    var $total = ( $mileage.val() * $miles.val() / $riders.val() ).toFixed(2)
     $('#js-result').html(function() {
-      // return "<p>" + $riders.val() + "</p><p>" + $miles.val() + "</p><p>" + $mileage.val() + "</p>"
-      return "<p class='total'>$" + $total + "</p>"
+      return "$" + $total
     })
+    if ($total >= 50 ) {
+      $('#js-result').addClass( 'expensive' )
+    }
+    if ($total < 50 ) {
+      $('#js-result').removeClass( 'expensive' )
+    }
   }
 
   $('#js-calculator').on('input', function() {
