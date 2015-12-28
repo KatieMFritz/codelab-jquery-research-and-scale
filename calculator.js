@@ -5,8 +5,10 @@ $('#js-calculator').each(function() {
   var $mileage = $container.find( 'input#js-mileage-rate' )
 
   function showResult() {
+    var $total = $mileage.val() * $miles.val() / $riders.val()
     $('#js-result').html(function() {
-      return "<p>" + $riders.val() + "</p><p>" + $miles.val() + "</p><p>" + $mileage.val() + "</p>"
+      // return "<p>" + $riders.val() + "</p><p>" + $miles.val() + "</p><p>" + $mileage.val() + "</p>"
+      return "<p class='total'>$" + $total + "</p>"
     })
   }
 
@@ -14,15 +16,3 @@ $('#js-calculator').each(function() {
    showResult()
   })
 })
-
-
-
-
-// $('#js-number-of-riders').on('input',  function () {
-//   var $riders = $( 'input#js-number-of-riders' ).val()
-//   console.log( $riders)
-// })
-//
-// $('#js-result').html(function() {
-//   return "<p>" + $riders  + "</p>"
-// })
