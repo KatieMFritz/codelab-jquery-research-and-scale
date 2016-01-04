@@ -11,8 +11,7 @@ $('.js-calculator').each(function() {
     })
     if ($total >= 50 ) {
       $('.js-result').addClass( 'expensive' )
-    }
-    if ($total < 50 ) {
+    } else {
       $('.js-result').removeClass( 'expensive' )
     }
   }
